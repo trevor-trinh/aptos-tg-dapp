@@ -1,39 +1,11 @@
-## Telegram Mini App Clicker Game Template
+<img width="1381" alt="image" src="https://github.com/user-attachments/assets/eb2021bd-37d3-4b4d-9df7-2e3e781ca806"><img width="1381" alt="image" src="https://github.com/user-attachments/assets/1ee5e7d5-c803-49e5-ad2f-c32e443aca1a">
 
-This template provides a ready to use clicker game dapp that can be run as a Telegram Mini App. It uese the Aptos Wallet Adapter to give you out of the box support. Under the hood, it’s powered by [Mizu Wallet](https://mizu.io/).
+sorry this app is doodoo
 
-## Read the template docs
+would have created move contract to interact with token address
 
-To get started with the template and learn more about the functionality and usage, head over to the [template docs](https://learn.aptoslabs.com/en/dapp-templates/telegram-mini-app-template)
+but testnet is down, devenet does not work with mizu wallet
 
-## The template provides:
+so here is just frontend idea
 
-- **Folder structure** - A pre-made dapp folder structure with a `frontend` and `contract` folders.
-- **Dapp infrastructure** - All required dependencies a dapp needs to start building on the Aptos network.
-- **Clicker game functionality implementation** - Pre-made `counter` components to read and increment the counter.
-- **Telegram Mini App integration** - The app can be run as a Telegram mini app.
-
-### What tools the template uses?
-
-- React framework
-- Vite development tool
-- shadcn/ui + tailwind for styling
-- Aptos TS SDK
-- Aptos Wallet Adapter
-- Node based Move commands
-- Telegram mini app SDK
-- [Mizu Wallet SDK Core](https://docs.mizu.io/docs/api-connect/core) if you choose seamless signing experience
-
-### What Move commands are available?
-
-The tool utilizes [aptos-cli npm package](https://github.com/aptos-labs/aptos-cli) that lets us run Aptos CLI in a Node environment.
-
-Some commands are built-in the template and can be ran as a npm script, for example:
-
-- `npm run move:test` - a command to run Move unit tests
-- `npm run move:compile` - a command to compile the Move contract
-- `npm run move:publish` - a command to publish the Move contract
-- `npm run dev` - a command to run the frontend locally
-- `npm run deploy` - a command to deploy the dapp to Vercel
-
-For all other available CLI commands, can run `npx aptos` and see a list of all available commands.
+swipe to buy, while taking a doodoo 🚽
