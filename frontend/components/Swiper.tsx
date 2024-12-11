@@ -38,10 +38,9 @@ const INITIAL_TOKENS = [
 ];
 
 export function Swiper() {
-  const [tokens, setTokens] = useState(INITIAL_TOKENS);
+  const [tokens] = useState(INITIAL_TOKENS);
   const [currentIndex, setCurrentIndex] = useState(INITIAL_TOKENS.length - 1);
   const [lastDirection, setLastDirection] = useState<string>();
-  const [isRefreshing, setIsRefreshing] = useState(false);
   const [tradeAmount, setTradeAmount] = useState(100);
 
   const childRefs = useMemo(
@@ -52,27 +51,27 @@ export function Swiper() {
     [tokens.length],
   );
 
-  const handleBuy = async (contract: string, amount: number) => {
+  const handleBuy = async (amount: number) => {
     toast({
       title: "🚀 Aping in! 🦍",
       description: `Buying $${amount} worth of tokens! WAGMI!`,
     });
   };
 
-  const handleSell = async (contract: string, amount: number) => {
+  const handleSell = async (amount: number) => {
     toast({
       title: "📄 Paper hands!",
       description: `Selling $${amount} worth of tokens! NGMI ser!`,
     });
   };
 
-  const swiped = (direction: string, contract: string, index: number) => {
+  const swiped = (direction: string, index: number) => {
     setLastDirection(direction);
     setCurrentIndex(index - 1);
     if (direction === "right") {
-      handleBuy(contract, tradeAmount);
+      handleBuy(tradeAmount);
     } else if (direction === "left") {
-      handleSell(contract, tradeAmount);
+      handleSell(tradeAmount);
     }
   };
 
@@ -132,7 +131,7 @@ export function Swiper() {
               onClick={handleRefresh}
               className="text-xl p-8 rounded-2xl bg-gradient-to-r from-[#22c55e] to-[#3b82f6] hover:from-[#16a34a] hover:to-[#2563eb] transition-all hover:scale-105 shadow-xl shadow-green-500/20"
             >
-              <RefreshCw className={`w-8 h-8 mr-2 ${isRefreshing ? "animate-spin" : ""}`} />
+              <RefreshCw className={`w-8 h-8 mr-2`} />
               Find More Tokens
             </Button>
           </div>
@@ -144,7 +143,7 @@ export function Swiper() {
               <TinderCard
                 ref={childRefs[index]}
                 key={`${token.contract}-${index}`}
-                onSwipe={(dir) => swiped(dir, token.contract, index)}
+                onSwipe={(dir) => swiped(dir, index)}
                 onCardLeftScreen={() => outOfFrame(token.ticker, index)}
                 className="absolute left-0 right-0 mx-auto cursor-grab active:cursor-grabbing"
                 swipeRequirementType="position"
