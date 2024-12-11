@@ -1,16 +1,12 @@
 import { Header } from "@/components/Header";
-import { Counter } from "@/components/Counter";
-import { TopBanner } from "@/components/TopBanner";
-
-import { IS_DEV } from "./constants";
+import { Swiper } from "@/components/Swiper";
 
 function App() {
   return (
     <>
-      {IS_DEV && <TopBanner />}
       <Header />
-      <div className="flex items-center justify-center flex-col">
-        <Counter />
+      <div className="flex items-center justify-center flex-col bg-gradient-to-b from-[#FF00FF] via-[#00FFFF] to-[#FF00FF]">
+        <Swiper />
       </div>
     </>
   );
